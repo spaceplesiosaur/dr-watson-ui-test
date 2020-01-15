@@ -15,7 +15,7 @@ export const hasErrored = errorMsg => ({
 export const addMessage = (newMessage, boolean) => ({
   type: 'ADD_MESSAGE',
   message: newMessage,
-  isUser: boolean
+  // isUser: boolean
 });
 
 export const clearMessages = () => ({

@@ -10,12 +10,22 @@ exports[`ChatBox component should match the snapshot rendering all messages 1`] 
     <Message
       isUser={false}
       key="message0"
-      message="Hello, I am Dr. Watson.  My understanding is that you are feeling tired.  Have you been feeling anxious this week?"
+      message={
+        Object {
+          "isUser": false,
+          "message": "Hello, I am Dr. Watson.  My understanding is that you are feeling tired.  Have you been feeling anxious this week?",
+        }
+      }
     />
     <Message
       isUser={true}
       key="message1"
-      message="Absolutely.  I feel like I am struggling to keep up."
+      message={
+        Object {
+          "isUser": true,
+          "message": "Absolutely.  I feel like I am struggling to keep up.",
+        }
+      }
     />
   </section>
   <section
@@ -46,12 +56,22 @@ exports[`ChatBox component should match the snapshot rendering an error if there
     <Message
       isUser={false}
       key="message0"
-      message="Hello, I am Dr. Watson.  My understanding is that you are feeling tired.  Have you been feeling anxious this week?"
+      message={
+        Object {
+          "isUser": false,
+          "message": "Hello, I am Dr. Watson.  My understanding is that you are feeling tired.  Have you been feeling anxious this week?",
+        }
+      }
     />
     <Message
       isUser={true}
       key="message1"
-      message="Absolutely.  I feel like I am struggling to keep up."
+      message={
+        Object {
+          "isUser": true,
+          "message": "Absolutely.  I feel like I am struggling to keep up.",
+        }
+      }
     />
     <p
       className="message watson error"
