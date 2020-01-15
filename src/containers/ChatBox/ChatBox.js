@@ -22,31 +22,36 @@ export class ChatBox extends Component {
     this.setState({ message: e.target.value });
   }
 
-  handleSubmit = e => {
+  handleSubmit = async (e) => {
     if (e.key === 'Enter' || e.button === 0) {
       const { message } = this.state;
       this.props.addMessage(message, true);
+      //addMessage expects an object
       this.setState({ message: '' });
-      this.messageChatBot();
+      await this.messageChatBot();
     }
   }
 
   messageChatBot = async () => {
     try {
       const messageResponse = await postMessage(this.state.message);
+      //we send up a string to the api, the post message function turns it into an object
       this.props.addMessage(messageResponse.message, false);
+      //it returns a message and is supposed to put it in the store.  The thing being put in the store, if this is right, is a string, or else an object
     } catch({ message }) {
       this.props.hasErrored(message)
     }
   }
 
   render() {
+
     const { message } = this.state;
     const { messages, errorMsg } = this.props;
     const survey = messages.map((message, i) => {
+      console.log(message)
       return <Message
         key={`message${i}`}
-        message={message}
+        message={message.message}
         isUser={message.isUser}
       />
     })

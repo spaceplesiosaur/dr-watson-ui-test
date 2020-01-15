@@ -114,9 +114,9 @@ describe('postMessage', () => {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ mockMessage })
+      body: JSON.stringify(mockMessage)
     };
-    postMessage(mockMessage, options);
+    postMessage(mockMessage.newMessage, options);
 
     expect(window.fetch).toHaveBeenCalledWith(url, options);
   });

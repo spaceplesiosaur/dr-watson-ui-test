@@ -4,7 +4,7 @@ import {addMessage, clearMessages} from './index.js';
 describe('actions', () => {
   it('should have a type of ADD_MESSAGE', () => {
     const mockActionPayload = "I am scared"
-    const expected = {type: "ADD_MESSAGE", message: mockActionPayload}
+    const expected = {type: "ADD_MESSAGE", message: mockActionPayload, isUser: true}
 
     expect(addMessage(mockActionPayload, true)).toEqual(expected)
   })

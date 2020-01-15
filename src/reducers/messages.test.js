@@ -6,7 +6,7 @@ describe('messages reducer', () => {
   })
 
   it('should return the correct state if the type is ADD_MESSAGE', () => {
-    expect(messages([], {type: 'ADD_MESSAGE', message: {message: "stuff", isUser: true}})).toEqual([{message: "stuff", isUser: true}])
+    expect(messages([], {type: 'ADD_MESSAGE', message: {message: "stuff", isUser: true}})).toEqual([{message: {message: "stuff", isUser: true}}])
   })
 
   it('should return the correct state if the type is CLEAR_MESSAGES', () => {
