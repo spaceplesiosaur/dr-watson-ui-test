@@ -20,6 +20,29 @@ export class WelcomeModal extends Component {
     this.setState({ [e.target.name]: e.target.value, error: '' });
   }
 
+  handleError = () => {
+    if (this.state.firstName === '' || this.state.lastName === '') {
+      return this.setState({error: "You need to fill in your name" })
+    }
+  }
+
+  // handleSubmit = async (e) => {
+  //   const { firstName, lastName, feeling, error } = this.state;
+  //
+  //   e.preventDefault();
+  //   await this.handleError()
+  //   if (this.state.error === '') {
+  //     return this.props.createUser({
+  //       id: Date.now(),
+  //       firstName,
+  //       lastName,
+  //       feeling,
+  //     });
+  //     this.connectToChatBot();
+  //   }
+  //
+  // }
+
   handleSubmit = e => {
     const { firstName, lastName, feeling } = this.state;
     e.preventDefault();

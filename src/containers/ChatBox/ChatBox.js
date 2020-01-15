@@ -36,7 +36,7 @@ export class ChatBox extends Component {
       const messageResponse = await postMessage(this.state.message);
       this.props.addMessage(messageResponse.message, false);
     } catch({ message }) {
-      this.props.hasErrored(message)  
+      this.props.hasErrored(message)
     }
   }
 
@@ -46,7 +46,7 @@ export class ChatBox extends Component {
     const survey = messages.map((message, i) => {
       return <Message
         key={`message${i}`}
-        message={message.message}
+        message={message}
         isUser={message.isUser}
       />
     })
@@ -70,8 +70,8 @@ export class ChatBox extends Component {
   }
 }
 
-export const mapStateToProps = ({ errorMsg }) => ({
-  errorMsg
+export const mapStateToProps = ({ errorMsg, messages }) => ({
+  errorMsg, messages
 })
 
 export const mapDispatchToProps = dispatch => bindActionCreators({ hasErrored }, dispatch);
